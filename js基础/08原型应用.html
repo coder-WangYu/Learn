@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>原型应用</title>
+</head>
+<body>
+<script>
+  // 扩展内置构造函数
+  let date = new Date()
+  console.log(date)
+  
+  // 目标输出：2022年2月21日
+  Date.prototype.myFormat = function () {
+    let year = this.getFullYear()
+    let month = this.getMonth() + 1
+    let day = this.getDate()
+    
+    return `${year}年${month}月${day}日`
+  }
+  
+  let date1 = new Date().myFormat()
+  console.log(date1)
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>回调地狱</title>
+</head>
+<body>
+<script>
+  // 什么是回调地狱 A - B - C - D
+  function getA(cb) {
+    setTimeout(() => {
+      cb("A")
+    }, 1000)
+  }
+  function getB(cb) {
+    setTimeout(() => {
+      cb("B")
+    }, 800)
+  }
+  function getC(cb) {
+    setTimeout(() => {
+      cb("C")
+    }, 600)
+  }
+  function getD(cb) {
+    setTimeout(() => {
+      cb("D")
+    }, 400)
+  }
+  
+  // getA(data => {
+  //   console.log(data)
+  // })
+  // getB(data => {
+  //   console.log(data)
+  // })
+  // getC(data => {
+  //   console.log(data)
+  // })
+  // getD(data => {
+  //   console.log(data)
+  // })
+  
+  getA(data => {
+    console.log(data)
+    getB(data=> {
+      console.log(data)
+      getC(data => {
+        console.log(data)
+        getD(data => {
+          console.log(data)
+          getA(data => {
+            console.log(data)
+            getB(data=> {
+              console.log(data)
+              getC(data => {
+                console.log(data)
+                getD(data => {
+                  console.log(data)
+                  getA(data => {
+                    console.log(data)
+                    getB(data=> {
+                      console.log(data)
+                      getC(data => {
+                        console.log(data)
+                        getD(data => {
+                          console.log(data)
+                        })
+                      })
+                    })
+                  })
+                })
+              })
+            })
+          })
+        })
+      })
+    })
+  })
+</script>
+</body>
+</html>

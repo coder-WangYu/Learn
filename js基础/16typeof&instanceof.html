@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>typeof & instanceof</title>
+</head>
+<body>
+<script>
+  // typeof：判断数据类型 number string boolean function undefined symbol object(null array object & F.f)
+  //   1.symbol（ES6新增）
+  //   2.string
+  //   3.boolean
+  //   4.number
+  //   5.function
+  //   6.object （注意：typeof 在判断 null、array、object以及函数实例（new + 函数）时，都是返回 object）
+  //   7.undefined
+  function F() {}
+  let f = new F()
+  console.log(typeof null)
+  console.log(typeof f)
+  console.log(typeof [])
+  console.log(typeof F)
+  
+  // instanceOf：只能判断引用类型
+  console.log([] instanceof Array)
+  console.log({} instanceof Object)
+  console.log((() => {}) instanceof Function)
+  console.log(new Number(123) instanceof Number)
+  console.log(123 instanceof Number)
+</script>
+</body>
+</html>

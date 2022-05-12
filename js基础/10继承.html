@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>继承</title>
+</head>
+<body>
+<script>
+  /**
+   * 例子：
+   * 普通用户（登录） 管理员用户（登录、删除）
+   */
+  // 1.类的继承
+  class User {
+    constructor(u_name, u_pwd) {
+      this.u_name = u_name
+      this.u_pwd = u_pwd
+    }
+    login() {
+      console.log("登录 ---------", `用户名：${this.u_name}，密码：${this.u_pwd}`)
+    }
+  }
+  
+  let user = new User("普通", 123)
+  user.login()
+  
+  // 继承 继承于哪个类就能访问哪个类的所有属性和方法
+  class Admin extends User {
+    delete() {
+      console.log("删除")
+    }
+  }
+  let admin = new Admin("管理员", 456)
+  admin.login()
+  admin.delete()
+  
+  // 2.利用原型继承
+  function PUser(u_name, u_pwd) {
+    this.u_name = u_name
+    this.u_pwd = u_pwd
+    this.login = function () {
+      console.log("登录")
+    }
+  }
+  
+  function PAdmin() {}
+  // PAdmin.prototype = new PUser()
+  
+  // let a = 10, b = 20
+  // let c
+  // c = a
+  // a = b
+  // b = c
+  
+  // 圣杯模式：借用空构造函数继承
+  function myExtends(Target, Origin) {
+    let F = function F() {}
+    
+    return (function () {
+      F.prototype = Origin.prototype
+      Target.prototype = new F()
+    })()
+  }
+  myExtends(PAdmin, PUser)
+  console.log(PAdmin.prototype)
+  
+  function F1() {
+    this.eat = function () {
+      console.log("吃东西")
+    }
+  }
+  
+  function F2() {
+    F1.call(this)
+  }
+  
+  let f2 = new F2()
+  
+  // 原型链：（向上查找）
+  let F1 = function () {
+    this.login = function () {
+      console.log("登录")
+    }
+  }
+  let F2 = function () {
+    this.self = function () {
+      console.log("F2")
+    }
+  }
+  F2.prototype = new F1()
+  let f2 = new F2()
+  f2.self()
+  f2.login()
+  Object.prototype.sayHello = function () {
+    console.log("hello")
+  }
+  f2.sayHello()
+</script>
+</body>
+</html>

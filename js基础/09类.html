@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>类</title>
+</head>
+<body>
+<script>
+  // ES6类基本语法：
+  class Cat {
+    constructor(name, age) {
+      this.name = name
+      this.age = age
+    }
+  }
+  Cat.prototype.sayname = function () {
+    console.log(this.name)
+  }
+  let cat = new Cat("饺子" , 2)
+  cat.__proto__.sayage = function () {
+    console.log(this.age)
+  }
+  console.log(cat)
+  cat.sayname()
+  cat.sayage()
+  Cat.prototype.eat = function () {
+    console.log("吃鱼")
+  }
+  cat.eat()
+</script>
+</body>
+</html>

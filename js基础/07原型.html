@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>原型</title>
+</head>
+<body>
+<script>
+  // 原型 构造函数
+  function Cat(name, age) {
+    this.name = name
+    this.age = age
+    this.sayname = () => {
+      console.log(this.name)
+    }
+  }
+  let cat = new Cat("饺子", 2)
+  console.log(cat.name, cat.age)
+  cat.sayname()
+  Cat.prototype.sayage = () => {
+    console.log(cat.age)
+  }
+  cat.sayage()
+  cat.__proto__.saycat = () => {
+    console.log(`名字：${cat.name}，年龄：${cat.age}`)
+  }
+  cat.saycat()
+</script>
+</body>
+</html>

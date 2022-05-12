@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>this指向</title>
+</head>
+<body>
+<script>
+  // 普通函数的this：谁调用指向谁
+  // this -> 指向window window.fn()
+  function fn() {
+    console.log(this)
+  }
+  fn()
+  
+  let cat = {
+    name: "饺子",
+    eat() {
+      console.log(this)
+    }
+  }
+  cat.eat()
+  
+  // 箭头函数：本身并没有this，它的this取决于上下文
+  setTimeout(() => {
+    console.log(this)
+  })
+  
+  let cat1 = {
+    name: "毛球",
+    self() {
+      setTimeout(() => {
+        console.log(this)
+      }, 300)
+    },
+    son: {
+      name: "小毛球",
+      self() {
+        setTimeout(() => {
+          console.log(this)
+        }, 200)
+      }
+    }
+  }
+  cat1.self()
+  cat1.son.self()
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>call的应用</title>
+</head>
+<body>
+<script>
+  // call继承
+  function Father() {
+    // this指向son
+    this.eat = function () {
+      console.log("吃东西")
+    }
+  }
+  
+  function Monther() {
+    // this指向son
+    this.zuofan = function () {
+      console.log("做饭")
+    }
+  }
+
+  // call实现多重继承：
+  function Son() {
+    // this指向实例
+    Father.call(this)
+    Monther.call(this)
+  }
+  
+  let son = new Son()
+  son.eat()
+  son.zuofan()
+  
+  // 利用call做多重继承
+  function F() {
+    this.eat = function () {
+      console.log("吃饭")
+    }
+  }
+  
+  // new：创建一个对象，把构造函数的this指向其实例
+  
+  function F1() {
+    this.cook = function () {
+      console.log("做饭")
+    }
+  }
+  
+  function F2() {
+    F.call(this)
+    F1.call(this)
+  }
+  let f2 = new F2()
+  f2.cook()
+  f2.eat()
+</script>
+</body>
+</html>

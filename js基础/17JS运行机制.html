@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS运行机制</title>
+</head>
+<body>
+<script>
+// 同步和异步：先执行同步任务再执行异步任务
+// 单线程：一个任务执行完成之后才能执行下一个任务
+// 异步任务推到任务队列（FIFO）
+// 定时器的实际时间是不准确的
+console.log(1)
+setTimeout(() => {
+  console.log("0定时器执行")
+}, 0) // 主线程空闲立即执行
+console.log(2)
+setTimeout(() => {
+  console.log("定时器执行")
+}, 500) // 500ms之后插入任务队列
+// 事件轮循 event loop：监测任务队列中是否有任务并按顺序执行
+// 计时器：时间到了之后将任务插入到任务队列里
+
+// 宏任务（定时器、ajax、事件）、微任务（promise.then、promise.catch）
+// 同步任务 -> 微任务 -> 宏任务
+new Promise((resolve, reject) => {
+  console.log(6) // 同步
+  // resolve(7)
+  reject(9)
+}).then(r => {
+  console.log(r)
+}).catch(err => {
+  console.log(8)
+  console.log(err)
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>改变this指向</title>
+</head>
+<body>
+<script>
+  // 1.调用函数 2.改变this指向
+  // 函数上的一个方法：call
+  function fn() {
+    console.log(123)
+    console.log(this.name)
+  }
+  // fn.call()
+  // fn.apply()
+  // fn.bind()()
+  
+  
+  let cat = {
+    name: "饺子",
+    eat(food1, food2) {
+      console.log(`${this.name}喜欢吃${food1}和${food2}`)
+    }
+  }
+  let dog = {
+    name: "旺财",
+  }
+  cat.eat.call(dog, "骨头", "肉")
+  
+  // apply：传参列表不同
+  // cat.eat.apply(dog, ["骨头", "肉"])
+  
+  // bind：返回一个待执行的函数
+  cat.eat.bind(dog, "骨头", "肉")()
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>闭包</title>
+</head>
+<body>
+<script>
+  // 闭包：内部函数保存到外部就会产生闭包
+  function outer() {
+    let a = 10
+
+    return function () {
+      console.log(a) // 内部函数调用外部函数的变量
+    }
+  }
+
+  let inner = outer() // 内部函数未被执行，外部函数变量a的内存不会被释放
+  inner()
+  
+  // 闭包的应用：私有化变量
+  ;let wy_space = (function () {
+    let a = 10, b = 20
+    
+    return {
+      a,
+      b,
+      add: function () {
+        console.log(a + b)
+      }
+    }
+  }())
+  wy_space.add()
+  console.log(wy_space)
+</script>
+</body>
+</html>

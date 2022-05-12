@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>手写Promise.all</title>
+</head>
+<body>
+<script>
+  /**
+   * Promise.all：
+   * 1.将多个promise包装成一个并返回
+   * 2.如果item为非promise项则先包装成Promise
+   * 3.参数为可迭代对象(iterator)
+   */
+  function promiseAll(args) {
+    return new Promise((resolve, reject) => {
+      const promiseArray = [] // 用于保存promise子项
+      let iteratorIndex = 0, // 记录可迭代对象长度
+        fullCount = 0 // 记录已完成子项的数量
+  
+      for (const item of args) {
+        let resultIndex = iteratorIndex // 记录索引
+        iteratorIndex ++
+        
+        Promise.resolve(item).then(res => {
+          promiseArray[resultIndex] = res
+          fullCount ++
+          
+          if (fullCount === iteratorIndex) {
+            resolve(promiseArray)
+          }
+        }).catch(error => {
+          reject(error)
+        })
+      }
+    })
+  }
+  promiseAll("123321").then(res => {
+    console.log(res)
+  })
+</script>
+</body>
+</html>

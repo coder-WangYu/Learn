@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>元素居中</title>
+  <style>
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      /*position: relative;*/
+      width: 500px;
+      height: 500px;
+      border: 1px solid;
+    }
+    
+    .odiv {
+      /*position: absolute;*/
+      /*left: calc(50% - 100px);*/
+      /*top: calc(50% - 100px);*/
+      /*float: left;*/
+      width: 200px;
+      height: 200px;
+      background: red;
+      /*margin: 150px;*/
+    }
+  </style>
+</head>
+<body>
+<!-- div居中、浮动元素居中、绝对定位元素居中、弹性盒居中 -->
+<div class="wrapper">
+  <div class="odiv"></div>
+</div>
+</body>
+</html>

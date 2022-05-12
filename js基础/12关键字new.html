@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>关键字new</title>
+</head>
+<body>
+<script>
+  // window.F()
+  function F() {
+    this.name = "小明"
+    console.log(this)
+    console.log("我是构造函数")
+  }
+  
+  // 构造函数本身也是一个函数，可以直接运行
+  // let f = F()
+  // new关键字：创建对象，然后将构造函数的this指向其实例
+  let f = new F()
+  console.log(f)
+</script>
+</body>
+</html>

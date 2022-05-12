@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>对象拷贝</title>
+</head>
+<body>
+<script>
+  // js内存结构：基本类型、引用类型
+  // 基本类型：Number String Boolean undefined null Symbol
+  // 引用类型：Array Object function Date
+  // 栈内存、堆内存
+  let a = 10
+  let b = a
+  a = 20
+  console.log(a, b)
+  
+  // 引用类型存储在堆内存中
+  let a1 = {
+    name: "小明"
+  }
+  let b1 = a1
+  // a1.name = "小张"
+  a1 = {
+    name: "小红"
+  }
+  console.log(a1.name, b1.name)
+  
+  // 浅拷贝：只能拷贝基本类型
+  function clone(obj) {
+    let newObj = {}
+    
+    for (let key in obj) {
+      newObj[key] = obj[key]
+    }
+    
+    return newObj
+  }
+  
+  let xm = {
+    name: "小明",
+    son: {
+      name: "小小明",
+      dau: {
+        name: "小小红"
+      }
+    }
+  }
+  let xm1 = clone(xm)
+  xm.name = "小红"
+  console.log(xm)
+  console.log(xm1)
+  xm.son.name = "小小红"
+  console.log(xm.son.name)
+  console.log(xm1.son.name)
+  
+  // 深拷贝：拷贝内层引用值
+  function deepClone(obj) {
+    let newObj = {}
+    for (let key in obj) {
+      // 判断是否为引用类型
+      if (obj[key] instanceof Object) {
+        // 递归
+        newObj[key] = deepClone(obj[key])
+      } else {
+        // 基本类型直接拷贝
+        newObj[key] = obj[key]
+      }
+    }
+    
+    return newObj
+  }
+  
+  let xm2 = deepClone(xm)
+  // xm.son.name = "小小明"
+  // xm.son.dau.name = "小小花"
+  // console.log(xm.son.dau)
+  // console.log(xm2.son.dau)
+  
+  // JSON深度拷贝：
+  function deepCloneByJSON(obj) {
+    return JSON.parse(JSON.stringify(obj))
+  }
+  
+  let xm3 = deepCloneByJSON(xm)
+  xm.son.name = "小小明"
+  xm.son.dau.name = "小小花"
+  console.log(xm.son.dau)
+  console.log(xm3.son.dau)
+</script>
+</body>
+</html>

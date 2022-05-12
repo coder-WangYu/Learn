@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise</title>
+</head>
+<body>
+<script>
+  // 什么是Promise
+  // let promiseA = new Promise(resolve => {
+  //   resolve("promiseA")
+  // })
+  // promiseA.then(r => {
+  //   console.log(r)
+  // })
+  
+  function getA() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve("promiseA")
+      }, 1000)
+    })
+  }
+  function getB() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve("promiseB")
+      }, 800)
+    })
+  }
+  function getC() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve("promiseC")
+      }, 600)
+    })
+  }
+  function getD() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve("promiseD")
+      }, 400)
+    })
+  }
+  
+  // Promise解决回调地狱
+  // getA().then(r => {
+  //   console.log(r)
+  //   return getB()
+  // }).then(r => {
+  //   console.log(r)
+  //   return getC()
+  // }).then(r => {
+  //   console.log(r)
+  //   return getD()
+  // }).then(r => {
+  //   console.log(r)
+  //   return getB()
+  // }).then(r => {
+  //   console.log(r)
+  //   return getC()
+  // }).then(r => {
+  //   console.log(r)
+  //   return getD()
+  // }).then(r => {
+  //   console.log(r)
+  // })
+  
+  // generator函数
+  // function *generator() {
+  //   yield getA()
+  //   yield getB()
+  //   yield getC()
+  // }
+  // let gen = generator()
+  // let r1 = gen.next().value
+  // r1.then(r => {
+  //   console.log(r)
+  // })
+  // /**
+  //  *
+  //  *
+  //  */
+  // let r2 = gen.next().value
+  // r2.then(r => {
+  //   console.log(r)
+  // })
+  // /**
+  //  *
+  //  *
+  //  */
+  // let r3 = gen.next().value
+  // r3.then(r => {
+  //   console.log(r)
+  // })
+  
+  // function *gen() {
+  //   yield getA()
+  // }
+  
+  // async ... await js边解释边执行 读代码
+  async function getData() {
+    // await 直接返回promise对象resolve的数据
+    let r1 = await getA()
+    console.log(r1)
+    let r2 = await getB()
+    console.log(r2)
+    let r3 = await getC()
+    console.log(r3)
+    let r4 = await getD()
+    console.log(r4)
+  }
+  getData()
+  
+  // pending -> fulfilled 成功
+  // pending -> rejected 失败
+</script>
+</body>
+</html>
