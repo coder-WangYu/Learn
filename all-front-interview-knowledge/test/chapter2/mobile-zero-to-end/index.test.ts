@@ -1,0 +1,35 @@
+/**
+ * @Editor：WYDX
+ * @CreateTime: 2022-07-13 15:15:58
+ * @LastEditor: WYDX
+ * @LastEditTime: 2022-07-13 15:15:58
+ * @Description: 利用splice实现移动数组中的0到数组末尾 - 单元测试
+ */
+
+import { mobileZeroToEnd } from "../../../src/chapter2/mobile-zero-to-end";
+
+describe('利用splice实现移动数组中的0到数组末尾', function () {
+  it('正常情况', function () {
+    const arr = [1, 0, 2, 0, 3, 0, 4, 0, 0, 0, 5]
+    mobileZeroToEnd(arr)
+    expect(arr).toEqual([1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0])
+  });
+
+  it('没有0', function () {
+    const arr = [1, 2, 3, 4]
+    mobileZeroToEnd(arr)
+    expect(arr).toEqual([1, 2, 3, 4])
+  });
+
+  it('全是0', function () {
+    const arr = [0, 0, 0, 0, 0]
+    mobileZeroToEnd(arr)
+    expect(arr).toEqual([0, 0, 0, 0, 0])
+  });
+
+  it('空数组', function () {
+    const arr = []
+    mobileZeroToEnd(arr)
+    expect(arr).toEqual([])
+  });
+});
