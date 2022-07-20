@@ -7,7 +7,7 @@
  */
 
 interface CharInfo {
-  char: string[]
+  char: string
   times: number
 }
 
@@ -18,19 +18,55 @@ interface CharInfo {
  */
 export function getCharacterMostTimes(str: string): CharInfo {
   const result: CharInfo = {
-    char: [],
+    char: "",
     times: 0
   }
   const length = str.length
   if (!length) return result
 
-  let i = 0, j = i, charTimes = 0
+  // i,j初始位置都是0 i持续向后移动 str[i] !== str[j]时 j追上i i继续移动...
+  //  a   a   a   b   b   c   d   e
+  // i,j
+  //  j   i
+  //  j       i
+  //  j           i
+  //             i,j
+  //              j   i
+  //              j       i
+  //                     i,j
+  //                      j   i
+  //                         i,j
+  //                          j   i
+  //                             j,i
+  let i = 0, j = 0, charTimes = 0
 
+  for (i; i < length; i++) {
+    if (str[i] === str[j]) {
+      charTimes ++
+    }
 
+    if (str[i] !== str[j] || i === length - 1) {
+      // 次数大于当前次数的清空数组并将当前字符推入char数组
+      if (charTimes > result.times) {
+        result.char = str[j]
+        result.times = charTimes
+      }
+
+      // 重置字符连续次数
+      charTimes = 0;
+
+      // 跳步 将j移动到i的位置
+      if (i < length - 1) {
+        j = i
+        i --
+      }
+    }
+  }
 
   return result
 }
 
 // // 功能测试
+// console.info(getCharacterMostTimes("abcd123"))
 // console.info(getCharacterMostTimes("abbbbbccddddde"))
 // console.info(getCharacterMostTimes("aaabbbbcccccde"))

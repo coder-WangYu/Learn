@@ -7,7 +7,7 @@
  */
 
 interface CharInfo {
-  char: string[]
+  char: string
   times: number
 }
 
@@ -18,7 +18,7 @@ interface CharInfo {
  */
 export function getCharacterMostTimes(str: string): CharInfo {
   const result: CharInfo = {
-    char: [],
+    char: "",
     times: 0
   }
   const length = str.length
@@ -50,15 +50,9 @@ export function getCharacterMostTimes(str: string): CharInfo {
 
       // i和j指向的字符不相等或j等于字符串长度时处理结果并跳出
       if (str[i] !== str[j] || j === length - 1) {
-        // 次数相等的都推到char数组里
-        if (charTimes === result.times) {
-          result.char.push(str[i])
-        }
-
         // 次数大于当前次数的清空数组并将当前字符推入char数组
         if (charTimes > result.times) {
-          result.char = []
-          result.char.push(str[i])
+          result.char = str[i]
           result.times = charTimes
         }
 

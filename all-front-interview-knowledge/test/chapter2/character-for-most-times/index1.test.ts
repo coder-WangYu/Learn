@@ -3,12 +3,12 @@
  * @CreateTime: 2022-07-15 16:38:55
  * @LastEditor: WYDX
  * @LastEditTime: 2022-07-15 16:38:55
- * @Description: 利用嵌套循环获取字符串中连续次数最多的字符 - 单元测试
+ * @Description: 利用双指针获取字符串中连续次数最多的字符 - 单元测试
  */
 
-import { getCharacterMostTimes } from "../../../src/chapter2/character-for-most-times";
+import { getCharacterMostTimes } from "../../../src/chapter2/character-for-most-times/index1";
 
-describe('利用嵌套循环获取字符串中连续次数最多的字符', function () {
+describe('利用双指针获取字符串中连续次数最多的字符', function () {
   it('正常情况', function () {
     expect(getCharacterMostTimes("abbcccdddd")).toEqual({
       char: "d",
