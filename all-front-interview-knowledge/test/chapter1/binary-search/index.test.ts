@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-07-06 15:57:17
  * @Description: 利用循环实现二分查找（非递归）- 单元测试
  */
-import { binarySearch } from "../../../src/chapter1/binary-search";
+import { binarySearch } from "../../../src/chapter1-algorithm-knowledge/binary-search";
 
 describe('利用循环实现二分查找（非递归）', function () {
   it('正常情况', function () {

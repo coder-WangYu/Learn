@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用XMLHttpRequest实现Ajax</title>
+</head>
+<body>
+<script>
+  /**
+   * 用XMLHttpRequest实现Ajax
+   * @param method 请求方式
+   * @param url 接口地址
+   * @param successFn 成功回调
+   * @param params 请求参数：默认为null GET请求无法咋请求体中携带参数
+   */
+  function ajax(method, url, successFn, params = null) {
+    const xhr = new XMLHttpRequest()
+    
+    xhr.open(method, url, false)
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          successFn(xhr.responseText)
+        }
+      }
+    }
+    xhr.send(params)
+  }
+</script>
+</body>
+</html>

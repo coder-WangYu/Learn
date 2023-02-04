@@ -6,7 +6,7 @@
  * @Description: 数字千分位格式化 - 单元测试
  */
 
-import { digitalMicrometerFormatt } from "../../../src/chapter2/digital-micrometer-formatt";
+import { digitalMicrometerFormatt } from "../../../src/chapter2-algorithm-knowledge/digital-micrometer-formatt";
 
 describe('利用数组实现数字千分位格式化', function () {
   it('正常情况', function () {

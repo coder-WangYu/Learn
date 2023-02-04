@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-07-04 16:33:47
  * @Description: 使用pop和unshift旋转数组 - 单元测试
  */
-import { rotateArray } from "../../../src/chapter1/array-rotate";
+import { rotateArray } from "../../../src/chapter1-algorithm-knowledge/array-rotate";
 
 describe('使用pop和unshift旋转数组', function () {
   it('正常情况', function () {

@@ -6,7 +6,7 @@
  * @Description: 利用递归实现斐波那契数列 - 单元测试
  */
 
-import { getFibonacciValue } from "../../../src/chapter2/fibonacci-sequence";
+import { getFibonacciValue } from "../../../src/chapter2-algorithm-knowledge/fibonacci-sequence";
 
 describe('利用递归实现斐波那契数列', function () {
   it('正常情况', function () {

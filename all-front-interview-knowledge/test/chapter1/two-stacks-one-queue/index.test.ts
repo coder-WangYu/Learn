@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-07-05 10:29:44
  * @Description: 用两个栈实现一个队列 - 单元测试
  */
-import { CustomQueue } from "../../../src/chapter1/two-stacks-one-queue";
+import { CustomQueue } from "../../../src/chapter1-algorithm-knowledge/two-stacks-one-queue";
 
 describe('用两个栈实现一个队列', function () {
   it('入队', function () {

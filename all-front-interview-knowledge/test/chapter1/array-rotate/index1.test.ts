@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-07-04 17:53:05
  * @Description: 使用concat旋转数组 - 单元测试
  */
-import { rotateArray } from "../../../src/chapter1/array-rotate/index1";
+import { rotateArray } from "../../../src/chapter1-algorithm-knowledge/array-rotate/index1";
 
 describe('使用concat旋转数组', function () {
   it('正常情况', function () {

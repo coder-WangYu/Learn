@@ -11,7 +11,7 @@ import {
   afterSequenceTraversal,
   tree,
   TreeNode
-} from "../../../src/chapter2/binary-tree-traversal";
+} from "../../../src/chapter2-algorithm-knowledge/binary-tree-traversal";
 
 //          5
 //        /   \

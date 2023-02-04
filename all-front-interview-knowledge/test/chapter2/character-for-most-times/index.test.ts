@@ -6,7 +6,7 @@
  * @Description: 利用嵌套循环获取字符串中连续次数最多的字符 - 单元测试
  */
 
-import { getCharacterMostTimes } from "../../../src/chapter2/character-for-most-times";
+import { getCharacterMostTimes } from "../../../src/chapter2-algorithm-knowledge/character-for-most-times";
 
 describe('利用嵌套循环获取字符串中连续次数最多的字符', function () {
   it('正常情况', function () {

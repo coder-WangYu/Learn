@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>节流</title>
+  <style>
+    body {
+      height: 3000px;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // let timer = null
+  // window.addEventListener("scroll", function () {
+  //   if (timer) return
+  //
+  //   timer = setTimeout(() => {
+  //     console.info(123)
+  //
+  //     timer = null
+  //   }, 200)
+  // })
+  
+  /**
+   * 节流封装
+   * @param fn 待执行函数
+   * @param delay 延迟
+   * @returns function
+   */
+  function throttle(fn, delay = 100) { // 一般设置100延迟
+    let timer = null
+    
+    return function () {
+      if (timer) return
+      
+      timer = setTimeout(() => {
+        fn.call(this)
+        
+        timer = null
+      }, delay)
+    }
+  }
+  
+  window.addEventListener("scroll", throttle(function () {
+    console.info(123)
+  }))
+</script>
+</body>
+</html>

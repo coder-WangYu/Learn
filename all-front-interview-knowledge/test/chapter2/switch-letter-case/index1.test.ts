@@ -6,7 +6,7 @@
  * @Description: 利用ASCII码切换字母大小写 - 单元测试
  */
 
-import { switchLetterCase } from "../../../src/chapter2/switch-letter-case/index1";
+import { switchLetterCase } from "../../../src/chapter2-algorithm-knowledge/switch-letter-case/index1";
 
 describe('利用ASCII码切换字母大小写', function () {
   it('正常情况', function () {

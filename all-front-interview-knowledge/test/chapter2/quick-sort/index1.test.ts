@@ -6,7 +6,7 @@
  * @Description: 利用slice实现快速排序 - 单元测试
  */
 
-import { quickSort } from "../../../src/chapter2/quick-sort/index1";
+import { quickSort } from "../../../src/chapter2-algorithm-knowledge/quick-sort/index1";
 
 describe('利用slice实现快速排序', function () {
   it('正常情况', function () {

@@ -1,0 +1,6 @@
+![img.png](../../assets/img/chapter2/2.7/img.png)
+![img_1.png](../../assets/img/chapter2/2.7/img_1.png)
+![img_2.png](../../assets/img/chapter2/2.7/img_2.png)
+![img_3.png](../../assets/img/chapter2/2.7/img_3.png)
+![img_4.png](../../assets/img/chapter2/2.7/img_4.png)
+![img_5.png](../../assets/img/chapter2/2.7/img_5.png)

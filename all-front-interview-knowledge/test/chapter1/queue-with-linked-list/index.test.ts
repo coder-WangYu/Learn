@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-07-06 10:59:30
  * @Description: 单向链表实现队列 - 单元测试
  */
-import { MyQueue } from "../../../src/chapter1/queue-with-linked-list";
+import { MyQueue } from "../../../src/chapter1-algorithm-knowledge/queue-with-linked-list";
 
 describe('单向链表实现队列', function () {
   it('入队和链表长度', function () {

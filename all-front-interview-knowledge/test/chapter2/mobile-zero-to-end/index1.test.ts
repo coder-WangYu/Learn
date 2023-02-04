@@ -6,7 +6,7 @@
  * @Description: 利用双指针实现移动数组中的0到数组末尾 - 单元测试
  */
 
-import { mobileZeroToEnd } from "../../../src/chapter2/mobile-zero-to-end/index1";
+import { mobileZeroToEnd } from "../../../src/chapter2-algorithm-knowledge/mobile-zero-to-end/index1";
 
 describe('利用双指针实现移动数组中的0到数组末尾', function () {
   it('正常情况', function () {

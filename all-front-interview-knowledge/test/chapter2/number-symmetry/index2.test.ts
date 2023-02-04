@@ -6,7 +6,7 @@
  * @Description: 利用翻转数求[1, 10000]之间的对称数 - 单元测试
  */
 
-import { findNumberSymmetry } from "../../../src/chapter2/number-symmetry/index2";
+import { findNumberSymmetry } from "../../../src/chapter2-algorithm-knowledge/number-symmetry/index2";
 
 describe('利用翻转数求[1, 10000]之间的对称数', function () {
   it('正常情况', function () {

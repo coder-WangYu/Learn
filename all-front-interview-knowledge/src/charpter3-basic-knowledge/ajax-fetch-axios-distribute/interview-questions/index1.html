@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用fetch实现Ajax</title>
+</head>
+<body>
+<script>
+  /**
+   * 用fetch实现Ajax
+   * @param url 请求地址
+   * @returns res 响应结果
+   */
+  function ajax(url) {
+    return fetch(url).then(res => res.json())
+  }
+</script>
+</body>
+</html>

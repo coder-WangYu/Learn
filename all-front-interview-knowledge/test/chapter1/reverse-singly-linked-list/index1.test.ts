@@ -5,8 +5,8 @@
  * @LastEditTime: 2022-07-05 17:03:453
  * @Description: 反转单向链表 - 单元测试
  */
-import { reverseLinkedList } from "../../../src/chapter1/reverse-singly-linked-list/index1";
-import { createLinkedList, LinkedListNode } from "../../../src/chapter1/reverse-singly-linked-list";
+import { reverseLinkedList } from "../../../src/chapter1-algorithm-knowledge/reverse-singly-linked-list/index1";
+import { createLinkedList, LinkedListNode } from "../../../src/chapter1-algorithm-knowledge/reverse-singly-linked-list";
 
 describe('利用指针反转单向链表并返回反转后的头部节点', function () {
   it('正常情况', function () {

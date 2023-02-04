@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-07-08 10:22:32
  * @Description: 二叉搜索树 - 单元测试
  */
-import { bst, getKthValue } from "../../../src/chapter2/binary-search-tree";
+import { bst, getKthValue } from "../../../src/chapter2-algorithm-knowledge/binary-search-tree";
 
 describe('获取二叉搜索树中的第k小值', function () {
   it('正常情况', function () {

@@ -6,7 +6,7 @@
  * @Description: 利用reverse反转字符串求[1, 10000]之间的所有对称数 - 单元测试
  */
 
-import { findNumberSymmetry } from "../../../src/chapter2/number-symmetry";
+import { findNumberSymmetry } from "../../../src/chapter2-algorithm-knowledge/number-symmetry";
 
 describe('利用reverse反转字符串求[1, 10000]之间的所有对称数', function () {
   it('正常情况', function () {

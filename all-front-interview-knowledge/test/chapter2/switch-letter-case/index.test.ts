@@ -6,7 +6,7 @@
  * @Description: 利用正则表达式切换字母大小写 - 单元测试
  */
 
-import { switchLetterCase } from "../../../src/chapter2/switch-letter-case";
+import { switchLetterCase } from "../../../src/chapter2-algorithm-knowledge/switch-letter-case";
 
 describe('利用正则表达式切换字母大小写', function () {
   it('正常情况', function () {

@@ -6,7 +6,7 @@
  * @Description: 利用字符串头尾匹配求[1, 10000]之间的对称数 - 单元测试
  */
 
-import { findNumberSymmetry } from "../../../src/chapter2/number-symmetry/index1";
+import { findNumberSymmetry } from "../../../src/chapter2-algorithm-knowledge/number-symmetry/index1";
 
 describe('利用字符串头尾匹配求[1, 10000]之间的对称数', function () {
   it('正常情况', function () {

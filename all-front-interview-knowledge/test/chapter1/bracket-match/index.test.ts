@@ -6,7 +6,7 @@
  * @Description: 括号匹配 - 单元测试
  */
 
-import { judgeBracketMatch } from "../../../src/chapter1/bracket-match";
+import { judgeBracketMatch } from "../../../src/chapter1-algorithm-knowledge/bracket-match";
 
 describe('判断一个字符串是否括号匹配', function () {
   it('正常情况', function () {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>防抖</title>
+</head>
+<body>
+  <input id="inp" type="text">
+
+  <script>
+    const oInp = document.getElementById("inp")
+    
+    // let timer = null
+    // oInp.addEventListener('input', function () {
+    //   if (timer) clearTimeout(timer)
+    //
+    //   timer = setTimeout(() => {
+    //     console.log(oInp.value)
+    //   }, 200)
+    // });
+    
+    /**
+     * 防抖封装
+     * @param fn 待执行业务代码
+     * @param delay 延迟
+     * @returns function
+     */
+    function debounce(fn, delay = 200) {
+      let timer = null
+      
+      return function () {
+        if (timer) clearTimeout(timer)
+        
+        timer = setTimeout(() => {
+          fn.call(this) // bind apply
+          
+          timer = null
+        }, delay)
+      }
+    }
+    
+    oInp.addEventListener("input", debounce(function () {
+      console.info(oInp.value)
+    }))
+  </script>
+</body>
+</html>

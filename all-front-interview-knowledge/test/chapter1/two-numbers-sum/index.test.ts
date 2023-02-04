@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-07-07 15:03:27
  * @Description: 利用二分思想查找和为n的两个数 - 单元测试
  */
-import { twoNumbersSum } from "../../../src/chapter1/two-numbers-sum";
+import { twoNumbersSum } from "../../../src/chapter1-algorithm-knowledge/two-numbers-sum";
 
 describe('利用二分思想查找和为n的两个数', function () {
   it('正常情况', function () {

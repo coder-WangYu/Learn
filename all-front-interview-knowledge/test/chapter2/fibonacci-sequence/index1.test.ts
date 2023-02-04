@@ -6,7 +6,7 @@
  * @Description: 利用循环（非递归）实现斐波那契数列
  */
 
-import {getFibonacciValue} from "../../../src/chapter2/fibonacci-sequence/index1";
+import {getFibonacciValue} from "../../../src/chapter2-algorithm-knowledge/fibonacci-sequence/index1";
 
 describe('利用循环（非递归）实现斐波那契数列', function () {
   it('正常情况', function () {
